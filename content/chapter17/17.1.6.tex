@@ -1,0 +1,79 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+\bigskip
+
+\begin{itemize}
+	\item Check a default target:
+
+	\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=1em
+		Syntax: systemctl get-default
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+
+	Eg:
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=1em
+		\# systemctl get-default
+		\newline
+		\color{white}
+		multi-user.target
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+
+\bigskip
+\bigskip
+
+	\item Set a default target:
+	\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=1em
+		Syntax: systemctl set-default target\_name
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	
+	Eg:
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+		\color{green}
+		\fontdimen2\font=1em
+		\# systemctl set-default multi-user.target
+		\newline
+		or
+		\newline
+		\# systemctl set-default graphical.target
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+
+
+\bigskip
+\bigskip
+
+\item Switch to a specific target instantly:
+\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+	\color{black}
+	\fontdimen2\font=1em
+	Syntax: systemctl isolate target\_name/etc/systemd/system/
+	\fontdimen2\font=4pt
+\end{tcolorbox}
+
+Eg:
+\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+	\color{green}
+	\fontdimen2\font=1em
+	\# systemctl isolate multi-user.target
+	\newline
+	or
+	\newline
+	\# systemctl isolate graphical.target
+	\fontdimen2\font=4pt
+\end{tcolorbox}
+
+
+\end{itemize}
+	
+\end{flushleft}
+\newpage
+
+

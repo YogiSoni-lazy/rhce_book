@@ -1,0 +1,40 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\bigskip
+	\begin{itemize}
+		\item Every machine on internet is identified by a numerical address.
+		\item It will be very difficult to memorize the numerical address of all the machines in the network. 
+		\item To solve the problem, historically, every machine in the network used \textbf{/etc/hosts} file where the name to address mapping was done.
+		\item Structure of \textbf{/etc/hosts} file:
+		\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			\newline
+			\fontdimen2\font=4em
+			IP-address      FQDN
+			\fontdimen2\font=4pt
+		\end{tcolorbox}	
+	
+		Eg:
+		
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=1em
+			\# cat /etc/hosts
+			\newline
+			\color{white}
+			192.168.2.4   server.example.com.
+			\newline
+			192.168.2.6	  client.example.com.
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+	\end{itemize}
+\end{flushleft}
+
+\newpage
+
+
+
+
+

@@ -1,0 +1,31 @@
+
+
+\begin{flushleft}
+	\begin{itemize}
+		\item firewalld rich rules allows custom firewall rules.
+		\item Eg: Allow connections to a service from a single IP address, instead of all IP addresses in a zone.
+		\item The basic syntax of a rich rule can be expressed by the following block:
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=1em
+			rule
+			\newline
+   			  [source]
+   			\newline
+			  [destination]
+			\newline
+			  service|port|protocol|icmp-block|masquerade|forward-port
+			\newline
+			  [log]
+			\newline
+			  [audit]
+			\newline
+			  [accept|reject|drop]
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+	\end{itemize}
+\end{flushleft}
+
+\newpage
+

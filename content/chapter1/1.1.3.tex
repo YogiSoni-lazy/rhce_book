@@ -1,0 +1,37 @@
+\setlength{\columnsep}{20pt}
+\begin{flushleft}
+
+
+
+	\begin{tabulary}{1.0\textwidth}{|p{13em}|p{13em}|}
+			\toprule
+			\textbf{Command} & \textbf{Purpose}\\
+			\midrule
+			\textbf{systemctl start service} \newline \bigskip Eg: \color{blue} \textbf{systemctl start sshd}  & Start a service/daemon. \\
+			\hline
+			\textbf{systemctl status service} \newline \bigskip Eg: \color{blue} \textbf{systemctl status sshd}  & Display status of a service/daemon. \\
+			\hline
+			\textbf{systemctl stop service} \newline \bigskip Eg: \color{blue} \textbf{systemctl stop sshd}  & Stop a service/daemon. \\
+			\hline
+			\textbf{systemctl restart service} \newline \bigskip Eg: \color{blue} \textbf{systemctl restart sshd}  & Restart a service/daemon.  The PID of daemon will change.	\\
+			\hline
+			\textbf{systemctl reload service} \newline \bigskip Eg: \color{blue} \textbf{systemctl restart sshd}  & Restart a service/daemon.  The PID of daemon will change.	\\
+			\hline
+			\textbf{systemctl reload service} \newline \bigskip Eg: \color{blue} \textbf{systemctl restart sshd}  & Reload a service/daemon. The process ID of daemon will not change.	 \\
+			\hline
+			\textbf{systemctl enable service} \newline \bigskip Eg: \color{blue} \textbf{systemctl enable sshd}  & Enables a service/daemon permanently, which means service/daemon will automatically start on system boot up. \\
+			\hline
+			\textbf{systemctl disable service} \newline \bigskip Eg: \color{blue} \textbf{systemctl enable sshd}  & Disable a service/daemon permanently, which means service/daemon will not automatically start on system boot up. \\
+			\hline
+			\textbf{systemctl list-dependencies service} \newline \bigskip Eg: \color{blue} \textbf{systemctl list-dependencies sshd}  & List units which are required and wanted by
+			the specified unit. \\
+			\bottomrule
+	\end{tabulary}
+
+
+
+
+\end{flushleft}
+
+\newpage
+

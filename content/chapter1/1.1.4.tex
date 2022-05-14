@@ -1,0 +1,39 @@
+\setlength{\columnsep}{20pt}
+\begin{flushleft}
+
+	\begin{tabulary}{1.0\textwidth}{|p{10em}|p{16em}|}
+			\toprule
+			\textbf{Systemd targets} & \textbf{Purpose}\\
+			\midrule
+			\textbf{graphical.target} & System supports multiple users, graphical and text-based logins. \\
+			\hline
+			\textbf{multi-user.target} & System supports multiple users, text-based logins only. \\
+			\hline
+			\textbf{rescue.target} & sulogin prompt, basic system initialization completed. \\
+			\hline
+			\textbf{emergency.target} & sulogin prompt, initramfs pivot complete and system root mounted on / read-only.	\\
+			\bottomrule
+	\end{tabulary}
+
+	Commands to manage targets:
+
+	\begin{tabulary}{1.0\textwidth}{|p{13em}|p{13em}|}
+		\toprule
+		\textbf{Command} & \textbf{Purpose}\\
+		\midrule
+		\textbf{systemctl set-default target} \newline Eg: \color{blue} \textbf{systemctl set-default graphical.target} \bigskip   & Set a default target/runlevel so that the system boots into that specific target. \\
+		\hline
+		\textbf{systemctl get-default} \bigskip & Get default target/runlevel. \\
+		\hline
+		\textbf{systemctl isolate target} \newline Eg: \color{blue} \textbf{systemctl isolate multi-user.target} \bigskip   & Switch to a specific target instantly. \\
+		\bottomrule
+	\end{tabulary}
+
+
+	
+
+
+\end{flushleft}
+
+\newpage
+

@@ -1,0 +1,55 @@
+\begin{flushleft}
+	\begin{itemize}
+
+		\begin{enumerate}
+			\item (Re)boot the system.
+			\item Interrupt the boot loader menu countdown by pressing any key.
+			\item Move the cursor to the entry to be started.
+			\item \textbf{Press e} to edit the current entry.
+			\item Move the cursor to the line that starts with linux16. This is the kernel command line.
+			\item Append \textbf{rd.break} (this will break just before control is handed from the initramfs to the actual system).
+			\item Press \textbf{Ctrl+x} to boot with these changes.
+		\end{enumerate}
+		At this point, a root shell will be presented, with the root file system for the actual system 	mounted read-only on /sysroot.
+		\newline
+		\newline
+		To recover the root password from this point, use the following procedure:
+		
+		\begin{enumerate}
+			\item Remount /sysroot as read-write.
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				switch\_root:/\# \textbf{mount -o remount,rw /sysroot}
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			\item Switch into a chroot jail, where /sysroot is treated as the root of the file system tree.
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				switch\_root:/\# \textbf{chroot /sysroot}
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			\item Set a new root password:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				sh-4.2\# \textbf{passwd root}
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			\item Make sure that all unlabeled files (including /etc/shadow at this point) get relabeled during boot.
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\color{green}
+				\fontdimen2\font=1em
+				sh-4.2\# \textbf{touch /.autorelabel}
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+		
+			\item Type \textbf{exit} twice. The first will exit the \textbf{chroot} jail, and the second will exit the initramfs debug shell.
+		\end{enumerate}
+	
+		At this point, the system will continue booting, perform a full SELinux relabel, then reboot again.
+	\end{itemize}
+\end{flushleft}
+
+\newpage

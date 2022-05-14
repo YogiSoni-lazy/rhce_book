@@ -1,0 +1,36 @@
+
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item The firewalld separates all incoming traffic into zones.
+		\item Each zone have its own set of rules.
+		\item Below are predefined zones with firewalld, having different usage:
+		\bigskip
+			\begin{tabulary}{1.0\textwidth}{|p{13em}|p{13em}|}
+			\toprule
+			\textbf{Zone name} & \textbf{Default configuration}\\
+			\midrule
+			\textbf{trusted} & Allow all incoming traffic. \\
+			\hline
+			\textbf{home} & Reject incoming traffic except the ssh, mdns, ipp-client, samba-client, or dhcpv6-client services \\
+			\hline
+			\textbf{internal} & Reject incoming traffic except ssh, ipp-client, or dhcpv6-client services. \\
+			\hline
+			\textbf{public} & Reject incoming traffic ssh or dhcpv6-client services. \\
+			\hline
+			\textbf{external} & Reject incoming traffic except ssh service. Masqueraded IPv4
+			address of the outgoing network interface. \\
+			\hline
+			\textbf{dmz} & Reject incoming traffic except outgoing traffic for ssh service. \\
+			\hline
+			\textbf{block}  & Reject all incoming traffic unless related to outgoing traffic. \\
+			\hline
+			\textbf{drop} & Drop all incoming traffic unless related to outgoing traffic (do not even respond with ICMP errors). \\
+			\bottomrule
+		\end{tabulary}
+		\item The \textbf{public zone} is the default zone for network interfaces.
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage
